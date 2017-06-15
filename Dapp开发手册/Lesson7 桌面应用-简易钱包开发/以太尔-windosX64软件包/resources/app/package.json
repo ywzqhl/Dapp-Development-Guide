@@ -1,0 +1,9 @@
+{
+  "name": "以太尔",
+  "version": "0.1.0",
+  "main": "main.js",
+  "dependencies": {
+    "web3": "^0.19.0",
+    "web3admin": "^0.4.4"
+  }
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>积分管理系统</title>
+		<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+	</head>
+	<body>
+	<div class="navall">
+		<div class="logo">
+			<h1>个人积分交易</h1>
+		</div>
+		<div class="navbar">
+			<ul class="nav nav-pills">
+			    <li role="presentation"><a href="/index">积分兑换</a></li>
+			    <li role="presentation" class="active"><a href="/trans">积分赠送</a></li>
+				<li role="presentation"><a href="/exchange">异业互兑</a></li>
+				<li role="presentation"><a href="/blockchain">区块链浏览器</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class="person" >
+		      <img height="180" src="/images/avtar.jpg" width="180" class="img-rounded person-img">
+		      <div>
+		      	<h4>&nbsp;个人账户:</h4>
+				<ul class="person-info">
+				  <li>范若海</li>
+				  <li>frank</li>
+				  <li>18211139878</li>
+				  <li aria-label="Home location" class="vcard-detail pt-1 css-truncate css-truncate-target" itemprop="homeLocation" title="
+				    Beijing"><svg aria-hidden="true" class="octicon octicon-location" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M6 0C2.69 0 0 2.5 0 5.5 0 10.02 6 16 6 16s6-5.98 6-10.5C12 2.5 9.31 0 6 0zm0 14.55C4.14 12.52 1 8.44 1 5.5 1 3.02 3.25 1 6 1c1.34 0 2.61.48 3.56 1.36.92.86 1.44 1.97 1.44 3.14 0 2.94-3.14 7.02-5 9.05zM8 5.5c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg> Beijing</li>
+				    <li><a href="mailto:1543818294@qq.com">1543818294@qq.com</a></li>
+				    <li>
+					    <span style="color: #3385ff" id="a"><%-aBalance%></span><span style="color: blue">&nbsp;积分A</span><br>
+					    <span style="color: #3385ff" id="b"><%-bBalance%></span><span style="color: blue">&nbsp;积分B</span><br>
+					    <span style="color: #3385ff" id="c"><%-cBalance%></span><span style="color: blue">&nbsp;积分C</span><br>
+				    </li>
+				</ul>
+	    	  </div>
+		</div>
+		<div class="trans">
+		<!-- 区块链详情内容区 -->
+	    <section class="profile container blockBg" style="font-size: 12px;">
+			<div class="row">
+				<div class="clearfix">
+					<div class="col-sm-3"></div>
+					<div class="btn-primary notory-user col-sm-6">
+						<span><i class="glyphicon glyphicon-user notoryFont"></i></span>
+						<div>账户:&nbsp;<span id="account"><%-account%></span></div>
+						<div style="margin-left: 55px">积分A:&nbsp;<span id="balance"><%-aBalance%> </span></div>
+						<div style="margin-left: 55px">积分B:&nbsp;<span id="balance" ><%-bBalance%> </span></div>
+						<div style="margin-left: 55px">积分C:&nbsp;<span id="balance"><%-cBalance%> </span></div>
+					</div>
+				</div>
+				<div style="margin-top: 10px;">
+					<!--<div class="notoryBegin">开启挖矿</div>-->
+					<form class="form-horizontal" enctype="multipart/form-data" id="form3">
+						<div class="form-group notoryHasPos">
+							<label class="col-sm-3 control-label"></label>
+								<div class="col-sm-6" style="position: relative;">
+									<input type="text" class="form-control" id="give" name="sender" placeholder="赠送者">
+									<span><i class="glyphicon glyphicon-user glyphicon-user-0"></i></span>
+									<div class="content-give">
+										<table>
+											<tr style="border: 1px solid lightgray"><td class="account1"><%-account%></td></tr>
+										</table>
+									</div>
+								</div>
+						</div>
+							<div class="form-group notoryHasPos">
+								<label class="col-sm-3 control-label"></label>
+								<div class="col-sm-6" style="position: relative;">
+									<input type="text" class="form-control" id="res" name="reciever" placeholder="接收者">
+									<span><i class="glyphicon glyphicon-user glyphicon-user-1"></i></span>
+									<div class="content-res">
+										<table>
+											<%accounts.forEach(function(account){%>
+												<tr style="border: 1px solid lightgray;"><td class="account2"><%-account%></td></tr>
+										    <%})%> 
+										</table>
+									</div>
+								</div>
+							</div>
+							<div class="form-group notoryHasPos">
+								<label class="col-sm-3 control-label"></label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" id="ether" name="ether" placeholder="积分数量"></input>
+									<span><i class="glyphicon glyphicon-usd glyphicon-user-2"></i></span>
+								</div>
+							</div>
+							<div class="form-group notoryHasPos">
+							<label class="col-sm-3 control-label"></label>
+							<div class="col-sm-6">
+								<select class="form-control">
+									<option selected="selected">选择积分种类</option>
+									<option>积分A</option>
+									<option>积分B</option>
+									<option>积分C</option>
+								</select>
+								<br>
+								<input class="btn btn-info " type="button" onclick="sendTransaction()" value="赠送">
+							</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- /row -->
+			</section>
+		</div>
+		<footer class="footer">
+	        <div>
+	          <img src="http://www.sageledger.com/wp-content/uploads/2016/12/0.5.jpg" style="margin-top: 20px;float:left;">
+	          <ul class="list-inline" style="float:left; margin-top:40px;margin-left:300px">
+	            <li><a href="http://www.sageledger.com/" target="_blank">联系我们</a></li><li>赛智区块链（北京）技术有限公司 提供技术支持</li>
+	          </ul>
+	        </div>
+	      </div>
+	    </footer>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/javascripts/main.js"></script>
+	<script type="text/javascript">
+		$("#give").focus(function(){
+			$(".content-give").show();
+		})
+
+		$(".account1").click(function(){
+			var account = $(this).html();
+			$("#give").val(account);
+			$(".content-give").hide();
+		})
+
+		$("#res").focus(function(){
+			$(".content-res").show();
+		})
+
+		$(".account2").click(function(){
+			var account = $(this).html();
+			$("#res").val(account);
+			$(".content-res").hide();
+		})
+
+		function sendTransaction(){
+			var account1 = $("#give").val();
+			var account2 = $("#res").val();
+			var amount = $("#ether").val();
+			var sage = $(this).parent().find("option:selected").text();
+			var sort = sage[2];
+			console.log(account1,account2,amount);
+			$.post("/send",{account1:account1,account2:account2,amount:amount,sort:sort},function(result){
+				console.log(result);
+			})
+		}
+	</script>
+	</body>
+</html>

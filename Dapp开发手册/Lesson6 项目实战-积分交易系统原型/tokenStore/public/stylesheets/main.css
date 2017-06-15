@@ -1,0 +1,178 @@
+body{ 
+	font-family: "微软雅黑";
+}
+.HeadHasBot { border-bottom: 2px solid gray; }
+.col-md-5-has-left { padding-left: 7%; }
+.navLine { line-height: 89px; height: 89px; /*overflow: hidden; */; }
+.caret { display: inline-block; width: 0; height: 0; margin-left: 2px; vertical-align: middle; border-top: 4px dashed; border-top: 4px solid\9; border-right: 4px solid transparent; border-left: 4px solid transparent; }
+.navLine > li > a { font-size: 17px; line-height: 89px; height: 89px; padding: 0 15px; }
+.loginbar > li { position: relative; display: inline; padding-bottom: 15px; list-style: none; }
+.index-group { width: 75%; margin: 25px 0; }
+.glyphicon-user{margin-left: 5px;}
+.index-go { padding: 0; }
+.sign-in { margin-left: 10%; color: #23527c; }
+section { position: relative; margin: 0 auto; padding: 30px; background: #f7f7f7; }
+section .section-top { height: 300px; }
+section .section-top .top1 { width: 640px; height: 300px; background: #3498db; }
+section .section-top .top2 { width: 640px; height: 300px; margin-left: 40px; }
+section .bottom1 { width: 640px; height: 840px; background: #fff; }
+section .bottom2 { width: 640px; height: 840px; margin-left: 40px; background: #fff; }
+section .bottom1-top { width: 100%; height: 60px; border-bottom: 3px solid #f7f7f7; background: #fff; }
+section .b-li1 { font-size: 18px; line-height: 55px; width: 135px; height: 55px; cursor: pointer; text-align: center; }
+section .b-li2 { line-height: 40px; width: 100px; height: 40px; margin: 10px 20px 0 0; cursor: pointer; text-align: center; border: 1px solid #555; }
+section .b-li2:hover { color: #fff; background: #000; }
+/* 自定义滚动条 */
+#scroll-1 { overflow: auto; overflow-x: hidden; height: 780px; }
+#scroll-1 ul { width: 640px; }
+#scroll-1::-webkit-scrollbar { width: 10px; }
+#scroll-1::-webkit-scrollbar-track { background: #fff; }
+#scroll-1::-webkit-scrollbar-thumb { border-radius: 4px; background: #ccc; }
+#scroll-1::-webkit-scrollbar-corner { background: #fff; }
+#scroll-1::-webkit-scrollbar-resizer { background: #fff; }
+#scroll-1 li { width: 742px; height: 114px; margin-bottom: 2px; padding: 16px 0 0 20px; background: #fff; }
+.list-left { width: 180px; height: 74px; padding-top: 14px; background: #8080AD; }
+.list-left p { line-height: 24px; width: 130px; height: 24px; margin: 0 auto; text-align: center; color: #fff; }
+.list-right { margin-left: 20px; }
+.list-right p { font-size: 14px; color: #999; }
+.list-right p a { color: #3498db; }
+.list-right .list-black { color: #000; }
+.list-black{size: 10px;}
+.bottom1-bottom { background: #f7f7f7; }
+/* bottom2 bottom1-bottom li的边框颜色 */
+.red { border-left: 1px solid red; }
+.green { border-left: 1px solid green; }
+.black { border-left: 1px solid black; }
+.blue { border-left: 1px solid blue; }
+.yellow { border-left: 1px solid yellow; }
+.bottom2 .bottom1-bottom .list-right { margin-right: 15px; }
+.list-transaction { width: 460px; height: 85px; background: #fff; }
+.dl-horizontal { text-align: left; }
+.dl-horizontal dt { width: 25px; color: #000; }
+.dl-horizontal dd { line-height: 16px; margin-left: 45px; color: #999; }
+.dl-horizontal dd span { color: #3498db; }
+.dropdown ul { margin-right: 20px; }
+/*表格内溢出内容省略号显示*/
+table { table-layout: fixed; /* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */; }
+td { overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    width: 100%; white-space: nowrap; /* 不换行 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow: hidden; 一起使用。*/
+    word-break: keep-all; /* 不换行 */; }
+/*去快链详情区域样式表*/
+.blockBg { background-color: #fff;}
+.blockNavP { margin-top: 30px; }
+/*钱包页面*/
+.notory-user{padding: 30px 10px;border-radius: 5px;}
+.notoryFont{font-size: 30px;float: left;padding-right: 20px;}
+.notoryHasPos{position: relative;}
+.notoryHasPos input{padding-left: 22px;}
+.notoryHasPos i{position: absolute; left: 15px;top:10px;}
+.glyphicon-user-0{color:lightskyblue}
+.glyphicon-user-1{color:greenyellow}
+.col-sm-6 .glyphicon-user-2{color: gold;left: 20px;}
+
+.navall{
+	height: 100px;
+	width: 1354px;
+	background-color: #24292e;
+	color: rgba(255,255,255,0.75);
+}
+
+.logo{
+	margin-top: 10px;
+	float: left;
+
+}
+
+.navbar{
+	margin-top: 30px;
+	margin-left: 20px;
+	float: left;
+	font-size: 16px;
+}
+.person{
+	float:left;
+	width: 194px;
+	height:430px;
+	border-right:1px solid lightgray;
+}
+
+.person-img{
+	margin-top: 6px;
+	margin-left: 6px;
+}
+.footer{
+	float: left;
+	height: 110px;
+	width: 100%;
+	border-top:1px solid lightgray;
+}
+
+.comsume{
+	width: 1155px;
+	height:430px;
+	float: left;
+}
+.blockchain{
+	width: 1155px;
+	height:430px;
+	float: left;
+	overflow: auto;
+}
+.product{
+	margin-left: 40px;
+	list-style: none;
+}
+
+.product li{ 
+	border: 1px solid lightgray;
+	float: left;
+}
+
+.product img{
+	height: 100px;
+	width: 100px;
+	border-bottom: 1px solid lightgray;
+}
+.trans{
+	width: 1155px;
+	height:430px;
+	float: left;
+	overflow: auto;
+}
+.content-give{
+	position: absolute;
+	z-index: 10;
+	display:none;
+	background-color: white;
+}
+
+.content-res{
+	z-index: 10;
+	position: absolute;
+	display:none;
+	background-color: white;
+}
+
+.account1{
+	width: 570px;
+
+}
+.account1:hover{
+background-color: lightgray;
+}
+
+.account2{
+	width: 570px;
+}
+.account2:hover{
+background-color: lightgray;
+}
+.exchange{
+	margin-left: 30px;
+	margin-top: 10px;
+	float: left;
+}
+.duihuan{
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
