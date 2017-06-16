@@ -1,12 +1,17 @@
 #web3.js的使用#
+
 本课不详细说明web3.js的所有API,只讲解，web3.js如何在nodejs的express框架下使用，在做的几个项目原型中都使用了哪些web3.js的API,以及注意事项。
-##一 、web3
-###1.添加模块
+
+##一 、web3##
+
+###1.添加模块###
+
 前面已经讲过，想使用某个功能模块，必须先添加这个模块，所以我们使用时先使用npm添加模块。-save是将模块添加到packge.json的dependencies中。
 	
 	npm install -save web3 
 
-###2.引用模块
+###2.引用模块###
+
 nodejs的一般引用模块的语句 var m = require("m")。
 
 	//引用web3模块
@@ -15,7 +20,9 @@ nodejs的一般引用模块的语句 var m = require("m")。
 	var web3 = new Web3();
 	//创建http连接到以太坊
 	web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
-###3.web3常用api
+
+###3.web3常用api###
+
 在以太坊控制台中，使用web3的api不需要在前面加web3.，但是在Nodejs中使用，必须要用web3对象去调用。有时候忘写，程序会报错。
 	
      1.var account = web3.eth.accounts[0]; //使用[0]索引获取主账号
@@ -51,13 +58,17 @@ nodejs的一般引用模块的语句 var m = require("m")。
         var data1 = web3.toUtf8(hex1);
         var data2 = web3.toAscii(hex2);
 ![](data.jpg)
-##二 、web3admin
+
+##二 、web3admin##
+
 如果你的应用涉及到挖矿，也就是说让用户在页面控制挖矿，停止挖矿，必须要使用web3admin模块来扩展web3模块。
-###1.添加web3admin模块
+
+###1.添加web3admin模块###
 
      npm install web3admin -save
 
-###2.引用此模块
+###2.引用此模块###
+
 web3admin模块只是用来扩展web3的功能的，实际的api还是使用web3来调用。
      
      var Web3 = require('web3');
@@ -68,7 +79,9 @@ web3admin模块只是用来扩展web3的功能的，实际的api还是使用web3
      var flag = web3.eth.mining; //判断是否挖矿
      web3.miner.start();//开启挖矿
      web3.miner.stop();//停止挖矿
-###3.实际代码示例
+
+###3.实际代码示例###
+
      <!DOCTYPE html>
 	<html lang="zh-CN">
 	  <head>
@@ -81,7 +94,7 @@ web3admin模块只是用来扩展web3的功能的，实际的api还是使用web3
 	    <!--你自己的样式文件 -->
 	    <link href="css/style.css" rel="stylesheet">
 	    <style>
-	      #page_navigation a {
+	      （#page_navigation a） {//把括号去掉
 	        padding: 3px;
 	        border: 1px solid gray;
 	        margin: 2px;
@@ -226,6 +239,8 @@ web3admin模块只是用来扩展web3的功能的，实际的api还是使用web3
 	    </script>
 	  </body>
 	</html>
-###4.应用效果
+
+###4.应用效果###
+
 这是一个桌面钱包应用，是使用Electron制作的，里面也是网页，只是放在了小的Chrome浏览器中。有兴趣可以研究一下，在第七课中会有教详细的介绍。
 ![](ether.jpg)
