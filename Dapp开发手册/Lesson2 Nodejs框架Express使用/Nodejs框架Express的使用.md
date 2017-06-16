@@ -2,7 +2,7 @@
 
 第一课中我们只使用了原生的Nodejs进行简单的数据抓取，只有两个数据，本节课主要介绍和后续开发Dapp有关的Express的知识。
 
-## 安装使用Express ##
+## 一、安装使用Express ##
 
 shift+鼠标右键打开后，选择在此处打开cmd命令窗口。以下命令均使用此类方法输入。第一课中nodejs的版本稍低，现在一般下载的版本都在6.9.5v以上。使用命令全局安装Express框架：
 	
@@ -65,7 +65,7 @@ ejs模版引擎的语法和使用请参考：[http://www.embeddedjs.com/](http:/
 	var reputationusers = require('./routes/reputationusers');
 	var tokenScoreindex = require('./routes/tokenScoreindex');
 	var tokenScoreusers = require('./routes/tokenScoreusers');
-## 使用Express框架实现账户余额的页面显示 ##
+## 二、使用Express框架实现账户余额的页面显示 ##
 
 ### 1.添加web3模块 ###
 web3模块前面也讲过，它是与以太坊互动的api。所以建立以太坊项目，必须添加这个模块，在你的项目目录中,-save 是将此模块作为必要依赖写入package.json文件中。
