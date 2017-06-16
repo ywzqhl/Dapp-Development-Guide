@@ -1,9 +1,9 @@
-#安装mongoDB插入测试数据#
+# 安装mongoDB插入测试数据 #
 
 以太坊中用到mongoDB的地方并不多，这里只是说明，区块链不适合存储大量和查询频率比较高的，建议只使用区块链记录关键数据，其他基本信息存储在mongoDB中。例如：区块链设置一个新帐号address,将其账户的基本信息，如用户名、真实姓名、电话、家庭住址等等存放在mongoDB中。
 
-##一 、下载安装##
-###1.下载###
+## 一 、下载安装 ##
+### 1.下载 ###
 mongoDB官方下载地址：[https://www.mongodb.com/download-center#community](https://www.mongodb.com/download-center#community "mongoDB官方下载地址")
 
 ![](download.jpg)
@@ -15,7 +15,7 @@ mongoDB官方下载地址：[https://www.mongodb.com/download-center#community](
 
 ![](lock.jpg)
 
-###2.开启命令行测试###
+### 2.开启命令行测试 ###
 我们首先在命令行中测试几行mongodb的简单方法。
 	
 	1.mongo //启动命令行交互模式
@@ -29,9 +29,9 @@ mongoDB官方下载地址：[https://www.mongodb.com/download-center#community](
 
 ![](base.jpg)
 
-## 二 在express框架中具体使用##
+## 二 在express框架中具体使用 ##
 
-###1.插入测试数据###
+### 1.插入测试数据 ###
 再插入数据时一定要注意数据的格式，为了测试方便，我全部使用了字符串的格式，甚至日期也是以字符串的形式，自拟的。后期优化需要修改过来。还有一个要注意这里的address不能虚构，要与你的以太坊节点帐号一致，否则对接不上。	
 
 	use datacage; //如果存在会选择使用，如果不存在会创建一个数据库
@@ -47,7 +47,7 @@ mongoDB官方下载地址：[https://www.mongodb.com/download-center#community](
 	db.users.insert({name:"颜利冲",username:"LICHONG",company:"交管局",position:"科员",phone:"13268321435",address:"0xb74b7440963c7f35c66cbb50ec5773f3fc58ce31",registtime:"2017-4-23 16:30",password:"123"})
 	db.users.insert({name:"武剑",username:"WUJIAN",company:"交管局",position:"科员",phone:"13267678989",address:"0xea7d574681746a725c129be225199e0613614393",registtime:"2017-4-23 16:51",password:"123"})
 
-###2.安装mongoose模块###
+### 2.安装mongoose模块 ###
 此模块支持nodejs和express对mongodb数据库进行操作。例如用到的最多的增删改查等等。
 		
 	var mongoose = require('mongoose');//导入mongoose模块
@@ -116,7 +116,7 @@ mongoDB官方下载地址：[https://www.mongodb.com/download-center#community](
 	var User = mongoose.model('User',UsersSchema) // 编译生成Model 模型
 	//暴露出去的方法
 	module.exports = User
-###3 修改路由文件###
+### 3 修改路由文件 ###
 
 	var express = require('express');
 	var router = express.Router();
@@ -148,7 +148,7 @@ mongoDB官方下载地址：[https://www.mongodb.com/download-center#community](
 	});
 	module.exports = router;
 
-###4 修改视图页面views/index.html###
+### 4 修改视图页面views/index.html ###
 上面的路由返回了一个user对象，这个对象可以利用模版引擎放到页面中。
 
 
